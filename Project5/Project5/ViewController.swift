@@ -20,12 +20,18 @@ class ViewController: UITableViewController {
         if let startWordsPath = Bundle.main.path(forResource: "start", ofType: "txt") {
             if let startWords = try? String(contentsOfFile: startWordsPath) {
                 allWords = startWords.components(separatedBy: "\n")
+            } else {
+                loadDefaultWords()
             }
         } else {
-            allWords = ["silkworm"]
+            loadDefaultWords()
         }
         
         startGame()
+    }
+    
+    func loadDefaultWords() {
+        allWords = ["silkworm"]
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,13 +59,23 @@ class ViewController: UITableViewController {
     func submit(answer:String){
         let lowerAnswer = answer.lowercased()
         
-        if (!isPossible(word: lowerAnswer)) {
-            showError(title: "Word not possible", message: "You can't spell that word from '\(title!.lowercased())'!")
+        if(lowerAnswer.count < 3){
+            showError(title:"Word too short", message:"A word must be longer than 3 characters")
+            return
+        }
+        
+        if (lowerAnswer == title) {
+            showError(title:"Word is not an anagram", message: "You can't just enter the original word, you know!")
             return
         }
         
         if (!isOriginal(word: lowerAnswer)) {
             showError(title: "Word used already", message: "Be more original!")
+            return
+        }
+        
+        if (!isPossible(word: lowerAnswer)) {
+            showError(title: "Word not possible", message: "You can't spell that word from '\(title!.lowercased())'!")
             return
         }
         
