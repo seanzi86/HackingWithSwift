@@ -113,11 +113,7 @@ class GameScene: SKScene {
         }
         
         if bombCount == 0 {
-            //no bombs - stop the fuse sound!
-            if bombSoundEffect != nil {
-                bombSoundEffect.stop()
-                bombSoundEffect = nil
-            }
+            clearBombSoundEffect()
         }
     }
     
@@ -300,10 +296,7 @@ class GameScene: SKScene {
             bombImage.name = "bomb"
             enemy.addChild(bombImage)
             
-            if bombSoundEffect != nil {
-                bombSoundEffect.stop()
-                bombSoundEffect = nil
-            }
+            clearBombSoundEffect()
             
             let path = Bundle.main.path(forResource: "sliceBombFuse.caf", ofType: nil)!
             let url = URL(fileURLWithPath: path)
@@ -407,7 +400,7 @@ class GameScene: SKScene {
             endGame(triggeredByBomb: false)
         }
         
-        life.texture = SKTexture(imageNamed: "sliceLifeGone")
+        removeLifeImage(index: livesImageIndex)
         life.xScale = 1.3
         life.yScale = 1.3
         life.run(SKAction.scale(to: 1, duration: 0.1))
@@ -420,15 +413,23 @@ class GameScene: SKScene {
         physicsWorld.speed = 0
         isUserInteractionEnabled = false
         
+        clearBombSoundEffect()
+        
+        if triggeredByBomb {
+            removeLifeImage(index: 0)
+            removeLifeImage(index: 1)
+            removeLifeImage(index: 2)
+        }
+    }
+    
+    func clearBombSoundEffect() {
         if bombSoundEffect != nil {
             bombSoundEffect.stop()
             bombSoundEffect = nil
         }
-        
-        if triggeredByBomb {
-            livesImages[0].texture = SKTexture(imageNamed: "sliceLifeGone")
-            livesImages[1].texture = SKTexture(imageNamed: "sliceLifeGone")
-            livesImages[2].texture = SKTexture(imageNamed: "sliceLifeGone")
-        }
+    }
+    
+    func removeLifeImage(index: Int) {
+        livesImages[index].texture = SKTexture(imageNamed: "sliceLifeGone")
     }
 }
