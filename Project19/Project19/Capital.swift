@@ -13,10 +13,12 @@ class Capital: NSObject, MKAnnotation {
     var title: String?
     var coordinate: CLLocationCoordinate2D
     var info: String
+    var favourite: Bool
     
-    init(title:String, coordinate: CLLocationCoordinate2D, info: String) {
+    init(title:String, coordinate: CLLocationCoordinate2D, info: String, favourite: Bool) {
         self.title = title
         self.coordinate = coordinate
-        self.info = info 
+        self.info = info
+        self.favourite = favourite
     }
 }
