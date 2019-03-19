@@ -167,3 +167,17 @@ Dodge space debris while you learn about per-pixel collision detection.
 Try your hand at improving the built-in data types of Swift.
 
 ---
+
+### Project 25: Selfie Share
+**Multipeer Connectivity Framework**
+
+Make a multipeer photo sharing app in just 150 lines of code.
+
+---
+
+### Project 26: Marble Maze
+**Core Motion, collision bitmasks, array reversing, compiler directives**
+
+Respond to device tilting by steering a ball around a vortex maze.
+
+---
