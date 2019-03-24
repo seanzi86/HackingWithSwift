@@ -195,3 +195,10 @@ Draw 2D shapes using Apple's high-speed drawing framework.
 Save user data securely using the device keychain and Touch ID.
 
 ---
+
+### Project 29: Exploding Monkeys
+**Mixing UIKit and SpriteKit, texture atlases, scene transitions, destructible terrain**
+
+Remake a classic DOS game and learn about destructible terrain and scene transitions.
+
+---
