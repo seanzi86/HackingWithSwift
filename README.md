@@ -188,3 +188,10 @@ Respond to device tilting by steering a ball around a vortex maze.
 Draw 2D shapes using Apple's high-speed drawing framework.
 
 ---
+
+### Project 28: Secret Swift
+**Touch ID and Face ID, device keychain**
+
+Save user data securely using the device keychain and Touch ID.
+
+---
