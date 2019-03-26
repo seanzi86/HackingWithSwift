@@ -202,3 +202,10 @@ Save user data securely using the device keychain and Touch ID.
 Remake a classic DOS game and learn about destructible terrain and scene transitions.
 
 ---
+
+### Project 30: Instruments
+**Profiling, shadows, image caching**
+
+Become a bug detective and track down lost memory, slow drawing and more.
+
+---
