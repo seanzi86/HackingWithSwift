@@ -209,3 +209,17 @@ Remake a classic DOS game and learn about destructible terrain and scene transit
 Become a bug detective and track down lost memory, slow drawing and more.
 
 ---
+
+### Project 31: Multibrowser
+**UIStackView, multitasking for iPad, size classes**
+
+Get started with UIStackView and see just how easy iPad multitasking can be.
+
+---
+
+###Project 32: SwiftSearcher
+**Core Spotlight, SFSafariViewController, NSAttributedString, Dynamic Type, automatic UITableViewCell sizing**
+
+Add your app's content to iOS 9's Spotlight search and take advantage of the new Safari integration.
+
+---
